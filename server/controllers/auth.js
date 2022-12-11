@@ -11,8 +11,6 @@ const api_secret = process.env.STREAM_API_SECRET;
 const app_id = process.env.STREAM_APP_ID;
 
 export const signup = async (req, res) => {
-    res.set('Access-Control-Allow-Origin', '*');
-
     try {
         const { fullName, username, password, phoneNumber } = req.body;
         const userId = randomBytes(16).toString('hex');
@@ -27,8 +25,6 @@ export const signup = async (req, res) => {
 };
 
 export const login = async (req, res) => {
-    res.set('Access-Control-Allow-Origin', '*');
-
     try {
         const { username, password } = req.body;
         
