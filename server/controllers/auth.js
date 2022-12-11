@@ -44,7 +44,7 @@ export const login = async (req, res) => {
         } else {
             res.status(500).json({ message: 'Incorrect password' });
         }
-    } catch (error) {
+    } catch (error) {ads
         console.log(error);
 
         res.status(500).json({ message: error });
