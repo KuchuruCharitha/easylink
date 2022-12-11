@@ -23,7 +23,7 @@ const SideBar = ({ logout }) => (
 
 const CompanyHeader = () => (
     <div className="channel-list__header">
-        <p className="channel-list__header__text">Medical Pager</p>
+        <p className="channel-list__header__text">Easy Link</p>
     </div>
 )
 
@@ -39,8 +39,7 @@ const ChannelListContent = ({ isCreating, setIsCreating, setCreateType, setIsEdi
     const { client } = useChatContext();
 
     const logout = () => {
-localStorage.clear();
-
+        localStorage.clear();
         window.location.reload();
     }
 
