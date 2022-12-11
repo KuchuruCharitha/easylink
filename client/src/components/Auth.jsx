@@ -15,7 +15,7 @@ const Auth = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         const { username, password, phoneNumber, avatarURL } = form;
-        const URL = 'http://easylink-3129.vercel.app/auth';
+        const URL = 'https://easylink-3129.vercel.app/auth';
         const { data: { token, userId, hashedPassword, fullName } } = await axios.post(`${URL}/${isSignup ? 'signup' : 'login'}`, {    username, password, fullName: form.fullName, phoneNumber, avatarURL,});
         localStorage.setItem('token', token);
         localStorage.setItem('username', username);
