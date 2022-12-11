@@ -12,8 +12,9 @@ import twilio from 'twilio';
 
 
 const app = express();
-const PORT = process.env.PORT || 5000;
 app.use(cors());
+
+const PORT = process.env.PORT || 5000;
 
 dotenv.config();
 
