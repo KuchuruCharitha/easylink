@@ -26,12 +26,15 @@ app.use(bodyParser.json({ limit: '30mb', extended: true }))
 app.use(bodyParser.urlencoded({ limit: '30mb', extended: true }))
 
 app.get('/', (req, res) => {
+    res.set('Access-Control-Allow-Origin', '*');
     res.sendFile('index.html', {root: path.join(__dirname, 'public')});
 })
 
 app.use(express.static('public'))
 
 app.post('/', (req, res) => {
+    res.set('Access-Control-Allow-Origin', '*');
+
     const { message, user: sender, type, members } = req.body;
 
     if(type === 'message.new') {
