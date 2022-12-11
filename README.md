@@ -1,39 +1,16 @@
-metmask login:
-![](results/metmask%20login.jpg)
-
 Home page:
-![](results/hompage%20after%20login.jpg)
-
-all transacations:
-![](results/all%20transactions.jpg)
-
-amount and details:
-![](results/total%20amount.jpg)
+![](results/Home%20page.png)
 
 
-invalid to address:
-![](results/invalid%20to%20address.jpg)
+Category search:
+![](results/category.png)
 
-gas fee:
-![](results/gas%20fee.jpg)
+Side bar preview:
+![](results/sidebar.png)
 
-insufficient balance:
-![](results/insufficient%20balance.jpg)
+Search results:
+![](results/search.png)
 
-recevier user transaction page:
-![](results/recevier%20transaction.jpg)
-
-sender user transaction page
-![](results/sender%20transacation.jpg)
-
-alchemy dashboard:
-![](results/alchemy%20dashboard.jpg)
-
-network dailyrequest:
-![](results/network%20daily%20requests.jpg)
-
-recent requests:
-![](results/recent%20requests.jpg)
-
-
+Suggestions and playback:
+![](results/supermario.png)
 
