@@ -25,8 +25,10 @@ app.use(bodyParser.json({ limit: '30mb', extended: true }))
 app.use(bodyParser.urlencoded({ limit: '30mb', extended: true }))
 
 app.get('/', (req, res) => {
-    res.send('Hello, World!');
-});
+    res.sendFile('index.html', {root: path.join(__dirname, 'public')});
+})
+
+app.use(express.static('public'))
 
 app.post('/', (req, res) => {
     const { message, user: sender, type, members } = req.body;
