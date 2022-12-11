@@ -1,10 +1,8 @@
 import React, { useState } from 'react';
-import Cookies from 'universal-cookie';
 import axios from 'axios';
 
 import signinImage from '../assets/signup.jpg';
 
-const cookies = new Cookies();
 
 const initialState = {
     fullName: '',
@@ -28,22 +26,22 @@ const Auth = () => {
 
         const { username, password, phoneNumber, avatarURL } = form;
 
-        const URL = 'http://easylinkserver.vercel.app/auth';
+        const URL = 'https://easylinkserver.vercel.app/auth';
         // const URL = 'https://medical-pager.herokuapp.com/auth';
 
         const { data: { token, userId, hashedPassword, fullName } } = await axios.post(`${URL}/${isSignup ? 'signup' : 'login'}`, {
             username, password, fullName: form.fullName, phoneNumber, avatarURL,
         });
 
-        cookies.set('token', token);
-        cookies.set('username', username);
-        cookies.set('fullName', fullName);
-        cookies.set('userId', userId);
+        localStorage.setItem('token', token);
+        localStorage.setItem('username', username);
+        localStorage.setItem('fullName', fullName);
+        localStorage.setItem('userId', userId);
 
         if(isSignup) {
-            cookies.set('phoneNumber', phoneNumber);
-            cookies.set('avatarURL', avatarURL);
-            cookies.set('hashedPassword', hashedPassword);
+            localStorage.setItem('phoneNumber', phoneNumber);
+            localStorage.setItem('avatarURL', avatarURL);
+            localStorage.setItem('hashedPassword', hashedPassword);
         }
 
         window.location.reload();

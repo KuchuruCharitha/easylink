@@ -1,12 +1,10 @@
 import React, { useState } from 'react';
 import { ChannelList, useChatContext } from 'stream-chat-react';
-import Cookies from 'universal-cookie';
 
 import { ChannelSearch, TeamChannelList, TeamChannelPreview } from './';
 import HospitalIcon from '../assets/hospital.png'
 import LogoutIcon from '../assets/logout.png'
 
-const cookies = new Cookies();
 
 const SideBar = ({ logout }) => (
     <div className="channel-list__sidebar">
@@ -41,13 +39,7 @@ const ChannelListContent = ({ isCreating, setIsCreating, setCreateType, setIsEdi
     const { client } = useChatContext();
 
     const logout = () => {
-        cookies.remove("token");
-        cookies.remove('userId');
-        cookies.remove('username');
-        cookies.remove('fullName');
-        cookies.remove('avatarURL');
-        cookies.remove('hashedPassword');
-        cookies.remove('phoneNumber');
+localStorage.clear();
 
         window.location.reload();
     }
